@@ -2,7 +2,7 @@ snippet <?
 	<?php
 	${1}
 snippet	class
-	${1:abstract }class ${2:`Filename()`} {${3}
+	${1:abstract }class ${2:`Filename()`} extends ${3:Class} {${4}
 	}
 snippet fun
 	${1:public }function ${2:functionName}( ${3:/*arguments*/} ) {${4}
@@ -65,3 +65,14 @@ snippet getInstance
 snippet show_error
 	ini_set('display_errors', '1');
 	error_reporting(${1:E_ALL});${2}
+snippet ar
+	CActiveRecord {
+		public static function model($className = __CLASS__) {
+			return parent::model($className);
+		}
+		public function tableName() {
+			return '${1:table name}';
+		}
+		public function primaryKey() {
+			return '${2:primary key}';
+		}${3}
