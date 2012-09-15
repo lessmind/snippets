@@ -1,2 +1,15 @@
 snippet #!
 	#!/usr/bin/env bash
+snippet if
+	if [ ${1} ]; then
+	fi
+snippet case
+	case ${${1}} in
+		**)
+		;;
+	esac
+snippet stderr
+	echo "${1}" >&2
+snippet while
+	while read ${1:line}; do
+	done
