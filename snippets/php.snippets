@@ -2,7 +2,7 @@ snippet <?
 	<?php
 	${1}
 snippet	class
-	${1:abstract }class ${2:`Filename()`} extends ${3:Class} {${4}
+	class ${1:`Filename()`} extends ${2:Class} {${3}
 	}
 snippet fun
 	${1:public }function ${2:functionName}() {${3}
@@ -71,14 +71,14 @@ snippet show_error
 snippet app
 	Yii::app()->${1}
 snippet ar
-	CActiveRecord {
+	class ${1:`Filename()`} extends CActiveRecord {
 		public static function model($className = __CLASS__) {
 			return parent::model($className);
 		}
 		public function tableName() {
-			return '${1:table name}';
+			return '${2:table name}';
 		}
 		public function primaryKey() {
-			return '${2:primary key}';
-		}${3}
+			return '${3:primary key}';
+		}${4}
 	}
