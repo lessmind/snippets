@@ -7,6 +7,9 @@ snippet	class
 snippet fun
 	${1:public }function ${2:functionName}() {${3}
 	}
+snippet while
+	while( ${1:/* condition */} ) {${2}
+	}
 snippet if
 	if( ${1:/* condition */} ) {${2}
 	}
@@ -62,7 +65,7 @@ snippet instance
 		return self::$${7:$2};
 	}${1}
 # show errors
-snippet show_error
+snippet err
 	ini_set('display_errors', '1');
 	error_reporting(${1:E_ALL});${2}
 ###################################################################
@@ -72,12 +75,15 @@ snippet app
 	Yii::app()->${1}
 snippet ar
 	class ${1:`Filename()`} extends CActiveRecord {
+
 		public static function model($className = __CLASS__) {
 			return parent::model($className);
 		}
+
 		public function tableName() {
 			return '${2:table name}';
 		}
+
 		public function primaryKey() {
 			return '${3:primary key}';
 		}${4}
