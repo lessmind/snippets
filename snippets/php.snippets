@@ -2,49 +2,55 @@ snippet <?
 	<?php
 	${1}
 snippet	class
-	class ${1:`Filename()`} extends ${2:Class} {${3}
+	class ${1:`Filename()`} extends ${2:Class}
+	{${3}
 	}
-snippet fun
-	${1:public }function ${2:functionName}() {${3}
+snippet meth
+	${1:public }function ${2:functionName}()
+	{${3}
+	}
+snippet fuc
+	function ${1:functionName}()
+	{${2}
 	}
 snippet while
-	while( ${1:/* condition */} ) {${2}
+	while(${1:/* condition */}) {${2}
 	}
 snippet if
-	if( ${1:/* condition */} ) {${2}
+	if(${1:/* condition */}) {${2}
 	}
 snippet ifil
-	<?php if( ${1:/* condition */} ): ?>${2}
+	<?php if(${1:/* condition */}): ?>${2}
 	<?php endif; ?>
 snippet else
 	else {${1}
 	}
 snippet elseif
-	else if( ${1:/* condition */} ) {${2}
+	else if(${1:/* condition */}) {${2}
 	}
 snippet elseifil
-	<?php elseif( ${1:/* condition */} ): ?>${2}
+	<?php elseif(${1:/* condition */}): ?>${2}
 snippet elseil
 	<?php else: ?>${2}
 snippet endif
 	<?php endif; ?>
 snippet for
-	for( ${1:/* init */}; ${2:/* cond */}; ${3:/* step */} ) {${4}
+	for(${1:/* init */}; ${2:/* cond */}; ${3:/* step */}) {${4}
 	}
 snippet foril
-	<?php for( ${1:/* init */}; ${2:/* cond */}; ${3:/* step */} ): ?>${4}
+	<?php for(${1:/* init */}; ${2:/* cond */}; ${3:/* step */}): ?>${4}
 	<?php endfor; ?>
 snippet foreach
-	foreach( $${1:variable} as $${2:value} ) {${3}
+	foreach($${1:variable} as $${2:value}) {${3}
 	}
 snippet foreachil
-	<?php foreach( $${1:variable} as $${2:value} ): ?>${3}
+	<?php foreach($${1:variable} as $${2:value}): ?>${3}
 	<?php endforeach; ?>
 snippet foreachk
-	foreach( $${1:variable} as $${2:key} => $${3:value} ) {${4}
+	foreach($${1:variable} as $${2:key} => $${3:value}) {${4}
 	}
 snippet foreachkil
-	<?php foreach( $${1:variable} as $${2:key} => $${3:value} ): ?>${4}
+	<?php foreach($${1:variable} as $${2:key} => $${3:value}): ?>${4}
 	<?php endforeach; ?>
 snippet ve
 	nl2br(var_export(${1:$var}, ${2:true}));
@@ -53,13 +59,14 @@ snippet vd
 snippet try
 	try {${3}
 	}
-	catch( ${1:Exception} ${2:e} ) {${5}
+	catch(${1:Exception} ${2:e}) {${5}
 	}
 # get instance
 snippet instance
 	static private $${2:_instance} = null;
-	static public function ${3:instance}( $doNew = ${4:false} ) {
-		if( $doNew || self::$${5:$2} === null ) {
+	static public function ${3:instance}($doNew = ${4:false})
+	{
+		if($doNew || self::$${5:$2} === null) {
 			self::$${6:$2} = new self();
 		}
 		return self::$${7:$2};
@@ -74,17 +81,21 @@ snippet err
 snippet app
 	Yii::app()->${1}
 snippet ar
-	class ${1:`Filename()`} extends CActiveRecord {
+	class ${1:`Filename()`} extends CActiveRecord
+	{
 
-		public static function model($className = __CLASS__) {
+		public static function model($className = __CLASS__)
+		{
 			return parent::model($className);
 		}
 
-		public function tableName() {
+		public function tableName()
+		{
 			return '${2:table name}';
 		}
 
-		public function primaryKey() {
+		public function primaryKey()
+		{
 			return '${3:primary key}';
 		}${4}
 	}
